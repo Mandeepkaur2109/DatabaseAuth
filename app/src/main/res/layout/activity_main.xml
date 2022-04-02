@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="enter email"
+            android:id="@+id/etemail"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="enter password"
+            android:id="@+id/etpass"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="signin"
+            android:id="@+id/btn"
+            android:layout_gravity="center"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sign in with google"
+            android:id="@+id/btngoogle"
+            android:layout_gravity="center"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="dont have an account!!  create account"
+            android:id="@+id/btncreate"
+            android:layout_gravity="center"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="grant camera permission"
+            android:id="@+id/btnpermission"
+            android:layout_gravity="center"/>
+
+<Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="grant gallery permission"
+            android:id="@+id/btngalllerypermission"
+            android:layout_gravity="center"/>
+
+
+
+    </LinearLayout>
+</layout>

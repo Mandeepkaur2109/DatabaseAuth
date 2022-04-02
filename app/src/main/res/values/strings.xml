@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Mandeep</string>
+    <string name="invalid_ph">phone number should be 10 digits</string>
+    <string name="password_not_matched">password not matched</string>
+    <string name="short_password">password should be of atleast 6 digits</string>
+    <string name="enter_password">enter password</string>
+    <string name="enter_valid_email">please enter valid email</string>
+    <string name="enter_email">enter email</string>
+    <string name="enter_last_name">enter last name</string>
+    <string name="enter_first_name">enter first name</string>
+    <string name="enter_valid_password">enter valid password</string>
+    <string name="enter_phone">enter phone  number</string>
+</resources>
