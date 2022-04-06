@@ -46,6 +46,28 @@ class MainActivity : AppCompatActivity() {
             // decision.
         }
     }
+    val imagePermissionLauncher =
+        registerForActivityResult(
+            ActivityResultContracts.GetContent()
+        ) {
+            it.let{
+                binding.imageView.setImageURI(it)
+            }
+        }
+    val multiplePermissionLauncher =
+        registerForActivityResult(
+            ActivityResultContracts.RequestMultiplePermissions()
+        ) {
+            var isShowPermissionDialog = false
+            for(mapValue in it){
+                if(!mapValue.value){
+                    isShowPermissionDialog = true
+                }
+            }
+            if(isShowPermissionDialog){
+                //alert
+            }
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -89,16 +111,20 @@ class MainActivity : AppCompatActivity() {
                 ContextCompat.checkSelfPermission(
                     this,
                     Manifest.permission.READ_EXTERNAL_STORAGE
-                ) == PackageManager.PERMISSION_GRANTED -> {
+                ) == PackageManager.PERMISSION_GRANTED &&  ContextCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.READ_CONTACTS
+                ) == PackageManager.PERMISSION_GRANTED-> {
                     // You can use the API that requires the permission.
+                    imagePermissionLauncher.launch("image/*")
                 }
 
 
                 else -> {
                     // You can directly ask for the permission.
                     // The registered ActivityResultCallback gets the result of this request.
-                    requestPermissionLauncher.launch(
-                        Manifest.permission.READ_EXTERNAL_STORAGE
+                    multiplePermissionLauncher.launch(
+                       arrayOf( Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.READ_CONTACTS)
                     )
                 }
             }
